@@ -1,0 +1,594 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0fb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+
+#my-animated-section {
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+    /* Other styling for your section (padding, text color, etc.) */
+    height: 400px; /* Example height */
+    overflow: hidden; /* To contain any potential overflow from animations */
+  }
+  
+#my-animated-section::before,
+#my-animated-section::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+opacity: 0; /* Initially hidden */
+transition: opacity 1.5s ease-in-out; /* Adjust duration and easing */
+z-index: -1; /* Place behind the content */
+}
+
+#my-animated-section::before {
+background-image: url('');
+opacity: 1; /* First image is initially visible */
+}
+
+#my-animated-section::after {
+background-image: url('');
+}
+
+/* Keyframes for a simple fade animation (you can adapt this) */
+@keyframes fadeBackground {
+0% {
+    opacity: 1;
+    background-image: url('backgroundmain1.jpg');
+}
+25% {
+    opacity: 1.5;
+    background-image: url('backgroundmain2.jpg');
+}
+
+50% {
+    opacity: 1;
+    background-image: url('backgroundmain3.jpg');
+}
+75% {
+    opacity: 1.5;
+    background-image: url('backgroundmain4.jpg');
+}
+100% {
+    opacity: 1;
+    background-image: url('backgroundmain5.jpg');
+}
+}
+/* Apply the animation */
+#my-animated-section {
+    animation: fadeBackground 12s infinite; /* Adjust duration as needed */
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: #8e24aa; /* Purple */
+    font-size: 1.8em;
+    font-weight: 600;
+}
+strong{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.options-menu {
+    position: relative; /* Needed for absolute positioning of the options */
+    display: inline-block; /* Or block, depending on your layout */
+    top: 0;
+    right: 0; /* Align to the right (adjust as needed) */
+    display: inline-block; /* To allow for the dots to be inline with other elements */
+  }
+  
+  .dots {
+    font-size: 1.5em; /* Adjust size as needed */
+    line-height: 1; /* Adjust vertical alignment */
+    cursor: pointer; /* Indicate it's interactive */
+  }
+  
+  .options {
+    display: none; /* Initially hide the options */
+    position: absolute; /* Position relative to the .options-menu container */
+    top: 100%; /* Position below the dots */
+    right: 0; /* Align to the right (adjust as needed) */
+    background-color: #f9f9f9;
+    min-width: 120px; /* Adjust width as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* Ensure it appears above other elements */
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+  }
+  
+  .options button {
+    display: block; /* Make each button take up a new line */
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .options button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Responsive adjustments for small views (optional) */
+  @media (max-width: 600px) {
+    .dots {
+      font-size: 2em; /* Make the dots larger on smaller screens */
+    }
+    .options {
+      left: auto; /* Adjust positioning for smaller screens if needed */
+      right: 0;
+    }
+  }
+
+.menu-button {
+    
+    background-color: transparent; /* To match the image */
+    border: none;
+    cursor: pointer;
+    color: #8e24aa; /* Adjust text color */
+    font-size: 1.5em; /* Adjust font size */
+}
+
+.dropdown {
+    position: relative; /* Needed for positioning the dropdown content */
+    display: inline-block; /* Or block, depending on your layout */
+  }
+  
+  .dropdown-button {
+    background-color: transparent; /* To match the image */
+    color: #8e24aa; /* Adjust text color */
+    padding: 10px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .arrow-down::after {
+    content: "\25BE"; /* Unicode character for a down arrow */
+    font-size: 0.8em;
+    margin-left: 5px;
+  }
+  
+  .dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: #f9f9f9; /* Light background */
+    min-width: 160px; /* Adjust width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* To appear above other elements */
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd; /* Light gray on hover */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown content on hover */
+  }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8e24aa; /* Purple */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #8e24aa; /* Purple */
+}
+
+.active-page {
+    color: #8e24aa; /* Purple */
+    font-weight: 700;
+}
+
+/* Button Styles */
+.find-out-more-button {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: white; /* Text color */
+    background-color: green;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.find-out-more-button::before,
+.find-out-more-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place behind the button text */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.find-out-more-button span {
+    margin-left: 5px; /* Space between text and arrow */
+}
+
+
+.find-out-more-button::before {
+    background-color: white; /* Background color on hover */
+    
+}
+
+.find-out-more-button::after {
+    background-color: green; /* Background color on hover */
+    opacity: 0; /* Initially hidden */
+}
+
+.find-out-more-button:hover {
+    color: white; /* Text color on hover */
+}
+
+.find-out-more-button:hover::before {
+    opacity: 0; /* Hide the "before" color */
+}
+
+.find-out-more-button:hover::after {
+    opacity: 1; /* Show the "after" color */
+}
+
+
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 30px;
+    text-align: center;
+    background-color: #f8f0fb;
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    color: #8e24aa; /* Purple */
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease, pulse 2s infinite alternate;
+}
+
+.hero-section p {
+    font-size: 1.8em;
+    color: #fdfcfc;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    max-width: 800px;
+    font-weight: 300;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.04);
+    }
+}
+
+/* Services */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px; /* Optional padding around the grid */
+  }
+  
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slightly move card up on hover */
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto; /* Adjust height if needed or set a fixed height */
+  }
+  
+  .card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the container */
+    filter: brightness(70%); /* Slightly darken the image */
+  }
+  
+  .card-content {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .card-content h3 {
+    color: #fff; /* White text for the title */
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .view-service-button {
+    background-color: none; /* Light background for the button */
+    color: #333; /* Dark text for the button */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-service-button:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+  }
+
+/* Services Section Styles */
+
+.services-section {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #f8f0fb;
+}
+
+.services-section h2 {
+    color: #8e24aa; /* Purple */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    margin: 0 auto;
+    max-width: 1200px; /* Optional max width for the grid */
+    padding: 0 20px; /* Optional padding for the grid */
+
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #8e24aa; /* Purple */
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.service-item p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.service-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 80px 30px;
+    text-align: center;
+    background-color: #f8f0fb;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    color: #8e24aa; /* Purple */
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.contact-details p strong {
+    color: #8e24aa; /* Purple */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.why-choose-us {
+    font-family: 'Montserrat', 'sans-serif';
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .reasons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .reason {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+  }
+  
+  .reason:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reason h3 {
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .reason p {
+    color: black;
+    font-size: 1.5em;
+  }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-section {
+        padding: 60px 20px;  
+    }
+
+    .services-section {
+        padding: 60px 20px;
+    }
+
+    .contact-section {
+        padding: 60px 20px;
+    }
+}
