@@ -497,7 +497,6 @@ background-color: #e0e0e0;
     display: flex;
     flex-direction: column;
     margin: 20px auto;
-    position: relative;
   }
   
   .reason:hover {
