@@ -754,7 +754,7 @@ header nav ul li button a.active-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
     background-color: #f8f0fb;
     min-height: calc(100vh -  150px);
 }
@@ -775,6 +775,11 @@ header nav ul li button a.active-page {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.contact-form-container,
+.contact-image-container {
+    width: 100%;
+    margin-bottom: 20px; /* Space between form and image */
+}
 .contact-form-container h2 {
     color: #8e24aa;
     margin-bottom: 30px;
