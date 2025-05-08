@@ -1,8 +1,8 @@
 const animatedSection = document.getElementById('my-animated-section');
 const backgroundImages = ['backgroundmain1.jpg', 'backgroundmain2.jpg', 'backgroundmain3.jpg', 'backgroundmain4.jpg', 'backgroundmain5.jpg']; // Array of your image URLs
 let currentIndex = 0; 
-const animationDuration = 3000; // Time in milliseconds between image changes
-const fadeDuration = 500; // Duration of the fade effect
+const animationDuration = 7000; // Time in milliseconds between image changes
+const fadeDuration = 1000; // Duration of the fade effect
 
 function changeBackgroundImage() {
   const nextIndex = (currentIndex + 1) % backgroundImages.length;
