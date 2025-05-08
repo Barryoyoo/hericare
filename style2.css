@@ -496,7 +496,7 @@ background-color: #e0e0e0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    margin: 0px auto;
+    margin: 20px auto;
     position: relative;
   }
   
@@ -608,7 +608,7 @@ background-color: #e0e0e0;
     align-items: center;
     flex-direction: auto;
     gap: 10px;
-    margin: 0px auto;
+    margin: 20px auto;
 }
 
 .contact-detail h2 {
