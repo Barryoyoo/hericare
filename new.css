@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0fb;
+    color: #333;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: #8e24aa;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #8e24aa;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #8e24aa;
+}
+
+/* Responsive Header Adjustments */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    color: #8e24aa;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-section p {
+    font-size: 1.8em;
+    color: #fdfcfc;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    max-width: 800px;
+    font-weight: 500;
+}
+
+/* Responsive Hero Section Adjustments */
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1.5em;
+    }
+}
+
+/* Services Section Styles */
+.services-section {
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #f8f0fb;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #5c0c72;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.service-item p {
+    margin-bottom: 15px;
+    line-height: 1.3;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.service-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Responsive Services Section Adjustments */
+@media (max-width: 767px) {
+    .services-section {
+        padding: 60px 20px;
+    }
+
+    .service-item {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px;
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 80px 30px;
+    text-align: center;
+    background-color: #f8f0fb;
+}
+
+.contact-details {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Responsive Contact Section Adjustments */
+@media (max-width: 767px) {
+    .contact-section {
+        padding: 60px 20px;
+    }
+
+    .contact-details {
+        text-align: center;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #004d26;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.single-logo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-details h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #8e24aa;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+
+.contact-details p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 200;
+    color: #feffffee;
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 767px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
