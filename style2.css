@@ -963,6 +963,10 @@ header nav ul li button a.active-page {
     .community-outreach-content {
       flex-direction: row;
     }
+    .community-outreach-image-wrapper,
+    .community-outreach-text {
+        max-width: 50%;
+    }
   }
   .community-outreach-image-wrapper {
     width: 100%;
