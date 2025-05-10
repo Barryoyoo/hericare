@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $name <$email>";
 
     if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+        echo "Location: contact.html";
         // Or redirect to a thank you page: header("Location: thank_you.html");
     } else {
         echo "Failed to send message.";
