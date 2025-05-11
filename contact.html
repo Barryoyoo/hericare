@@ -109,7 +109,75 @@
             <p>&copy; 2025 HeriCare Neuro Rehabilitation Services. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the form and the message div
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
 
+    // Check if the form and message div exist on the page
+    if (contactForm && formMessage) {
+
+        // Add an event listener for the form's submit event
+        contactForm.addEventListener('submit', function(event) {
+            // Prevent the default browser form submission
+            event.preventDefault();
+
+            // Clear previous messages and hide the message div
+            formMessage.textContent = '';
+            formMessage.style.display = 'none';
+            formMessage.style.borderColor = '#ccc'; // Reset border color
+            formMessage.style.color = '#333'; // Reset text color
+
+
+            // Collect form data using FormData object
+            const formData = new FormData(contactForm);
+
+            // --- Send data using the Fetch API ---
+            fetch(contactForm.action, { // Use the action attribute from the form
+                method: contactForm.method, // Use the method attribute from the form
+                body: formData // The collected form data
+            })
+            .then(response => {
+                // Check if the HTTP response was ok (status in the range 200-299)
+                if (!response.ok) {
+                    // If the server responded with an error status (e.g., 404, 500)
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // Parse the response body as JSON
+                return response.json();
+            })
+            .then(data => {
+                // This 'data' is the JSON object returned by your PHP script
+
+                // Display the message based on the 'status' from the PHP response
+                formMessage.textContent = data.message; // Display the message from PHP
+                formMessage.style.display = 'block'; // Make the message div visible
+
+                if (data.status === 'success') {
+                    // Style the message div for success
+                    formMessage.style.borderColor = '#4CAF50'; // Green border
+                    formMessage.style.color = '#4CAF50';       // Green text
+                    contactForm.reset(); // Clear the form fields on successful submission
+                } else {
+                    // Style the message div for errors
+                    formMessage.style.borderColor = '#f44336'; // Red border
+                    formMessage.style.color = '#f44336';       // Red text
+                }
+            })
+            .catch(error => {
+                // This catch block handles network errors or errors thrown in the .then blocks
+                console.error('Fetch Error:', error); // Log the error to the browser console
+                formMessage.textContent = 'An error occurred while submitting the form. Please try again.';
+                formMessage.style.borderColor = '#f44336';
+                formMessage.style.color = '#f44336';
+                formMessage.style.display = 'block'; // Make the message div visible
+            });
+            // --- End of Fetch API ---
+        });
+    }
+});
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
