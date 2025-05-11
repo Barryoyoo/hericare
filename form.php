@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response['message'] = 'Invalid email format.';
         } else {
             // --- Email Sending Logic ---
-            $to = "hericarenbi@gmail.com"; // <<< --- Replace with the actual recipient email
+            $to = "bodoro2017@gmail.com"; // <<< --- Replace with the actual recipient email
             $subject = "New Message from Website Contact Form";
             $body = "Name: $fullName\n";
             $body .= "Email: $email\n\n";
